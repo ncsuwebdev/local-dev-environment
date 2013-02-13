@@ -8,9 +8,9 @@ Steps to make it happen
 
 Note: For WRAP to work, you must be using host with a cname (i.e. - your-cname.unity.ncsu.edu:8080).
 
-By default, it will share the Apache docroot (located at /var/www/html) to your local folder of 
-/usr/local/htdocs.  You can change that if you'd like in the Vagrantfile.  Just update the 
-value for the config.vm.share_folder setting.
+By default, it will share the Apache docroot (located at /var/www/html) to your 
+local /usr/local/htdocs folder.  You can change that if you'd like in the Vagrantfile.  
+Just update the value for the config.vm.share_folder setting.
 
 
 To hook up Sequel Pro to connect to the DB remotely
