@@ -1,9 +1,12 @@
 Steps to make it happen
 =========================================================================
 
-By default, it will share the Apache docroot (located at /var/www/html) to your local folder of 
+- By default, it will share the Apache docroot (located at /var/www/html) to your local folder of 
 /usr/local/htdocs.  You can change that if you'd like in the Vagrantfile.  Just update the 
 value for the config.vm.share_folder setting.
+
+- By default it forwards port 80 from the VM to port 8080 on your local machine. You can modify
+this setting in the Vagrantfile as well. Just update the config.vm.forward_port value to 80, 80
 
 You'll need to make the /usr/local/htdocs folder (or whatever you set it to) yourself.
 
