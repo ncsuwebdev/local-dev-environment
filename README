@@ -1,0 +1,46 @@
+Steps to make it happen
+=========================================================================
+
+1) Install Vagrant (http://downloads.vagrantup.com/)
+2) Install VirtualBox (https://www.virtualbox.org/wiki/Downloads)
+3) In the directory with your server configs run:  'vagrant up'
+4) Navigate to localhost:8080 and you should be good to go.
+
+Note: For WRAP to work, you must be using host with a cname (i.e. - your-cname.unity.ncsu.edu:8080).
+
+By default, it will share the Apache docroot (located at /var/www/html) to your local folder of 
+/usr/local/htdocs.  You can change that if you'd like in the Vagrantfile.  Just update the 
+value for the config.vm.share_folder setting.
+
+
+To hook up Sequel Pro to connect to the DB remotely
+=========================================================================
+1) Download Sequel Pro (http://www.sequelpro.com/download)
+2) Make a new connection (set the following things and leave the rest as the defaults)
+        Name:  Vagrant Box (or whatever you want)
+        MySQL Host: 127.0.0.1
+        Username: root
+        SSH Host: 127.0.0.1
+        SSH User: vagrant
+        SSH Key: ~/.vagrant.d/insecure_private_key
+        SSH Port: 2222
+
+3) Hit connect!
+4) You're done! Use Sequel Pro like a boss.
+
+
+Connect to the VM with SSH
+=========================================================================
+- From the directory of your configs, just do 'vagrant ssh'
+ 
+Note: sudo doesn't need a password or anything.  Just do 'sudo -s' and you're good to go.
+
+
+Rerun the puppet configs without relaunching the VM
+=========================================================================
+- From the directory of your configs, just do 'vagrant provision'
+
+
+Anything else 
+=========================================================================
+- From the directory of your configs, just do 'vagrant -h' for the list of commands available

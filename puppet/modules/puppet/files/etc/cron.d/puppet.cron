@@ -1,0 +1,2 @@
+# THIS FILE IS MAINTAINED BY PUPPET!
+# 30 * * * * root /usr/bin/puppet apply /etc/puppet/manifests/configure.pp 2>&1 > /tmp/puppet.log
