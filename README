@@ -15,11 +15,13 @@ You'll need to make the /usr/local/htdocs folder (or whatever you set it to) you
 3) In the directory with your server configs run:  'vagrant up'
 4) Navigate to localhost:8080 and you should be good to go.
 
+**********************************
 Note: For WRAP to work, you must be using host with a cname (i.e. - your-cname.unity.ncsu.edu:8080).
 
 Due to issues with the VM's networking, your "real" IP won't be forwarded to the VM. In order for
 WRAP to work correctly, you'll need to make sure you select "1 hour, any address" as the Cookie Type 
 when logging in to WRAP.
+**********************************
 
 By default, it will share the Apache docroot (located at /var/www/html) to your 
 local /usr/local/htdocs folder.  You can change that if you'd like in the Vagrantfile.  
