@@ -8,6 +8,7 @@ Vagrant::Config.run do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "centos-6.2-64bit-puppet"
+  #config.vm.box = "centos-6.4-x86_64"
 
   config.vm.customize do |vm|
     vm.memory_size = 2048
@@ -17,6 +18,7 @@ Vagrant::Config.run do |config|
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   config.vm.box_url = "http://packages.vstone.eu/vagrant-boxes/centos/6.2/centos-6.2-64bit-puppet-vbox.4.1.18.box"
+  #config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20130309.box"
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
@@ -42,6 +44,8 @@ Vagrant::Config.run do |config|
 
   # You can change the local path according to your own needs 
   config.vm.share_folder "docroot", "/var/www/html/", "/usr/local/htdocs/"
+
+  config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/SHARE_NAME", "1"]
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.

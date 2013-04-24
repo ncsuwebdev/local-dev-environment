@@ -5,7 +5,7 @@ node default {
     include httpd
     include build
     include mysqld
-    include xdebug
+    #include xdebug
     include wrap
 
     file { '/var/www/html/index.html' :
@@ -22,7 +22,7 @@ node default {
 
     file { '/var/www/html/.htaccess' :
         ensure => present,
-        content => "SetEnv APPLICATION_ENV \"development\"",
+        content => "AuthType WRAPOptional\nrequire nothing\n\nSetEnv APPLICATION_ENV \"development\"",
         require => Package['httpd']
     }
 
