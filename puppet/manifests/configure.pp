@@ -5,7 +5,7 @@ node default {
     include httpd
     include build
     include mysqld
-    #include xdebug
+    include xdebug
     include wrap
 
     file { '/var/www/html/index.html' :

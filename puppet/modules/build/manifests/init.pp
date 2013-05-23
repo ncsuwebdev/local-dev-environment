@@ -21,7 +21,6 @@ class build {
     package { "libssh2":
         ensure => installed,
     }
-
     
 
     package { [
@@ -29,7 +28,8 @@ class build {
                 "php-mbstring",
                 "php-mcrypt",
                 "php-domxml-php4-php5",
-                "php-pecl-apc.x86_64"
+                "php-pecl-apc.x86_64",
+                "php-ldap"
               ]:
         ensure => installed,
         require => Yumrepo["epel"]
