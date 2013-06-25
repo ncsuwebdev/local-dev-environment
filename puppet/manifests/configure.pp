@@ -29,6 +29,5 @@ node default {
     exec { "set timezone":
       command => "/bin/ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime",
       refreshonly => true
-    }
-    
+    }    
 }

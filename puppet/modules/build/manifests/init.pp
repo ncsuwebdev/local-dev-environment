@@ -41,4 +41,26 @@ class build {
         ]:
         ensure => installed
     }
+
+    exec { "download-composer":
+      cwd => "/tmp",
+      command => "curl -sS https://getcomposer.org/installer | php",
+      creates => "/usr/local/bin/composer",
+      require => Package["php"],
+      path    => ["/usr/bin", "/usr/sbin", "/usr/local/bin", "/bin"]
+    }
+
+    exec { "install-composer":
+        cwd => "/tmp",
+        command => "mv composer.phar /usr/local/bin/composer",
+        creates => "/usr/local/bin/composer",
+        require => Exec["download-composer"],
+        path    => ["/usr/bin", "/usr/sbin", "/usr/local/bin", "/bin"]
+    }
+
+    exec { "update-composer":
+        command => "composer self-update",
+        require => Exec["install-composer"],
+        path    => ["/usr/bin", "/usr/sbin", "/usr/local/bin", "/bin"]
+    }
 }
