@@ -13,7 +13,7 @@ You'll need to make the /usr/local/htdocs folder (or whatever you set it to) you
 1) Install Vagrant (http://downloads.vagrantup.com/)
 2) Install VirtualBox (https://www.virtualbox.org/wiki/Downloads)
 3) In the directory with your server configs run:  'vagrant up'
-4) Navigate to localhost:8080 and you should be good to go.
+4) Navigate to localhost and you should be good to go.
 
 **********************************
 Note: For WRAP to work, you must be using host with a cname (i.e. - your-cname.unity.ncsu.edu:8080).
