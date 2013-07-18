@@ -5,18 +5,16 @@ Steps to make it happen
 /usr/local/htdocs.  You can change that if you'd like in the Vagrantfile.  Just update the 
 value for the config.vm.share_folder setting.
 
-- By default it forwards port 80 from the VM to port 8080 on your local machine. You can modify
-this setting in the Vagrantfile as well. Just update the config.vm.forward_port value to 80, 80
-
 You'll need to make the /usr/local/htdocs folder (or whatever you set it to) yourself.
 
 1) Install Vagrant (http://downloads.vagrantup.com/)
 2) Install VirtualBox (https://www.virtualbox.org/wiki/Downloads)
 3) In the directory with your server configs run:  'vagrant up'
-4) Navigate to localhost and you should be good to go.
+4) Navigate to 192.168.33.10 and you should be good to go.
+5) Optional: Add your cname to point to 192.168.33.10 to your /etc/hosts file (Note: this is required for WRAP to work)
 
 **********************************
-Note: For WRAP to work, you must be using host with a cname (i.e. - your-cname.unity.ncsu.edu:8080).
+Note: For WRAP to work, you must be using host with a cname (i.e. - your-cname.unity.ncsu.edu).
 
 Due to issues with the VM's networking, your "real" IP won't be forwarded to the VM. In order for
 WRAP to work correctly, you'll need to make sure you select "1 hour, any address" as the Cookie Type 
@@ -34,7 +32,7 @@ To hook up Sequel Pro to connect to the DB remotely
         Name:  Vagrant Box (or whatever you want)
         MySQL Host: 127.0.0.1
         Username: root
-        SSH Host: 127.0.0.1
+        SSH Host: 192.168.33.10
         SSH User: vagrant
         SSH Key: ~/.vagrant.d/insecure_private_key
         SSH Port: 2222
