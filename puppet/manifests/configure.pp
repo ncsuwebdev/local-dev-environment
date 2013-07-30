@@ -6,6 +6,7 @@ node default {
     include build
     include mysqld
     include xdebug
+    include ldap
     include wrap
 
     file { '/var/www/html/index.html' :
